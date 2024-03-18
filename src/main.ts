@@ -1,5 +1,21 @@
+import "./assets/main.scss";
+
 import { createApp } from 'vue'
-import './style.css'
+
+
 import App from './App.vue'
 
-createApp(App).mount('#app')
+//PLUGINS
+import vuetify from "./plugins/Vuetify";
+import globalComponents from "./plugins/GlobalComponents";
+import router from "./router/Index";
+
+const app = createApp(App)
+
+//PLUGINS
+app.use(vuetify)
+app.use(globalComponents)
+app.use(router)
+
+
+app.mount('#app')
