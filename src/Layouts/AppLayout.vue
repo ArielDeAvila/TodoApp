@@ -14,12 +14,13 @@
       height="82"
       class="app-bar px-5 px-sm-10"
       :order="order"
+      style="background-color: transparent;"
     >
       <app-bar @open="open=!open" :opened="open"/>
     </v-app-bar>    
 
-    <v-main  class="app-main" style="min-height: 100vh;">
-      <main class="main-container px-5 px-sm-10 pt-10 ">
+    <v-main  class="app-main" style="height: 100dvh;">
+      <main class="main-container px-5 px-sm-10 pt-10">
         <router-view></router-view>
       </main>
     </v-main>
@@ -108,11 +109,6 @@ onMounted(() => {
   }
 }
 
-.breadcrumb{
-  border-bottom: 1px solid rgb(var(--v-theme-line-border));
-  background: rgba(var(--v-theme-bf-gray-1), 0.04);
-}
-
 .app-main{
   &::before{
     content: "";
@@ -129,6 +125,6 @@ onMounted(() => {
 
 .main-container{
   padding-bottom: 30px !important;
-  
+  // width: 100%;
 }
 </style>

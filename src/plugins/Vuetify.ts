@@ -1,24 +1,25 @@
 // import "@/assets/sass/vuetify/settings.scss";
+import "vuetify/styles";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 import { dark, light } from "./VuetifyThemes";
 import "@mdi/font/css/materialdesignicons.css";
 
-let defaultTheme = "light";
+let defaultTheme = "dark";
 
-const settings = localStorage.getItem("settings");
-if (settings) {
-  const setting = JSON.parse(settings);
-  const mode = setting.preferences.find(
-    (obg: any) => obg.name == "Modo Oscuro"
-  );
-  if (mode) {
-    defaultTheme = mode.status == true ? "light" : "dark";
-  }
-}
+// const settings = localStorage.getItem("settings");
+// if (settings) {
+//   const setting = JSON.parse(settings);
+//   const mode = setting.preferences.find(
+//     (obg: any) => obg.name == "Modo Oscuro"
+//   );
+//   if (mode) {
+//     defaultTheme = mode.status == true ? "light" : "dark";
+//   }
+// }
 
-console.log({ defaultTheme });
+// console.log({ defaultTheme });
 
 const vuetify = createVuetify({
   components: { ...components },

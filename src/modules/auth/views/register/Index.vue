@@ -1,6 +1,6 @@
 <template> 
   <section>
-    Dashboard aaaa
+    <h1>Register</h1>
   </section>
 </template> 
 
