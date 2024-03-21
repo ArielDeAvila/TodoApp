@@ -11,6 +11,10 @@ import App from './App.vue'
 import vuetify from "./plugins/Vuetify";
 import globalComponents from "./plugins/GlobalComponents";
 import router from "./router/Index";
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
+import { optionsToast } from "./plugins/Toast";
+
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
@@ -18,10 +22,11 @@ const app = createApp(App)
 
 app.config.globalProperties.mode = 'dev'
 
+
 //PLUGINS
 app.use(globalComponents)
 app.use(vuetify)
-
+app.use(Toast, optionsToast);
 
 //PROJECT BASE
 app.use(router)

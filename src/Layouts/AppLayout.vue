@@ -19,7 +19,7 @@
       <app-bar @open="open=!open" :opened="open"/>
     </v-app-bar>    
 
-    <v-main  class="app-main" style="height: 100dvh;">
+    <v-main  class="app-main" style="min-height: 100dvh;">
       <main class="main-container px-5 px-sm-10 pt-10">
         <router-view></router-view>
       </main>

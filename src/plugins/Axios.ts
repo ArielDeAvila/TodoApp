@@ -25,16 +25,18 @@ axios.interceptors.response.use(
 
     const errorsArray = [];
     if (error.request.status != 401 && error.request.status != 404) {
-      if (error.response.data.message) {
-        errorsArray.push(error.response.data.message);
-      } else {
-        error.response.data.errors.forEach((element: any) => {
-          errorsArray.push(element.message);
-        });
-      }
+      console.log(error);
+      
+      // if (error.response.errors) {
+      //   errorsArray.push(error.response.errors);
+      // } else {
+      //   error.response.data.errors.forEach((element: any) => {
+      //     errorsArray.push(element.message);
+      //   });
+      // }
     }
 
-    errorsStore.setErrors(errorsArray);
+    // errorsStore.setErrors(errorsArray);
     return Promise.reject(
       (error.response && error.response.data) || "Wrong Services"
     );

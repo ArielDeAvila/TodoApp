@@ -1,12 +1,12 @@
 <template> 
   <section class="d-flex flex-column align-center justify-center ga-10">
-    <h1>Login</h1>
+    <h1>Inicia sesión</h1>
 
-    <v-card rounded="xl" class="pa-5 pb-8 border" width="500"> 
+    <v-card rounded="xl" class="pa-5 pb-8 border w-100" max-width="500"> 
       <div class="d-flex align-center justify-center mb-8">
         <img src="@/assets/images/img/todo.png" alt="ToDo logo" width="120">
       </div>
-      <vee-form @submit.prevent="onLogin">
+      <vee-form @submit.prevent="onLogin" v-slot="{ isSubmitting }">
         <div class="d-flex flex-column ga-2 mb-2">
           <label>E-mail</label>
           <v-text-field
@@ -31,8 +31,14 @@
           <p>¿Aún no tienes cuenta? <router-link :to="{name: 'register'}">Registrate</router-link></p>
         </div>
         <div class="d-flex justify-center">
-          <v-btn class="btn-primary w-50" rounded="lg" variant="flat" height="40">
-            Login
+          <v-btn
+            class="btn-primary w-100"
+            max-width="250"
+            rounded="lg"
+            variant="flat"
+            height="40"
+            :loading="isSubmitting">
+            Iniciar sesión
           </v-btn>
         </div>
       </vee-form>

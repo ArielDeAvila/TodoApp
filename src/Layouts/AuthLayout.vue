@@ -1,6 +1,6 @@
 <template> 
-  <v-layout class="bg-background">
-    <v-main  class="app-main" style="height: 100dvh;">
+  <v-layout class="bg-background pb-10">
+    <v-main  class="app-main" style="min-height: 100dvh;">
       <main class="px-5 px-sm-10 pt-10">
         <router-view></router-view>
       </main>
