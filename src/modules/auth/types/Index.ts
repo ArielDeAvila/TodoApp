@@ -4,3 +4,8 @@ export type UserRequestDto = {
   password: string | null;
   verifyPassword: string | null;
 };
+
+export type LoginRequestDto = {
+  email: string | null;
+  password: string | null;
+};

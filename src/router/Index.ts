@@ -17,11 +17,12 @@ const router = createRouter({
   ],
 });
 
-const isAuthenticated = localStorage.getItem("auth");
 
 const publicRoutes: any = ['login','register']
 
 router.beforeEach(async (to, from, next) => {
+  const isAuthenticated = localStorage.getItem("auth");
+  
   if (!isAuthenticated && !publicRoutes.includes(to.name)) {
     next({ name: "login", replace: true })
   }

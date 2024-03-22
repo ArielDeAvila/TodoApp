@@ -1,6 +1,10 @@
 import axios from "axios";
 import { useErrorsStore } from "@/stores/errors";
 import router from "@/router/Index";
+import { BaseResponse } from '../types/TypeStore';
+import { useToast } from "vue-toastification";
+
+const toast = useToast()
 
 const bearer = localStorage.getItem("auth");
 if (bearer) {
@@ -26,7 +30,15 @@ axios.interceptors.response.use(
     const errorsArray = [];
     if (error.request.status != 401 && error.request.status != 404) {
       console.log(error);
+      if (error.response.data) {
+        toast.error(
+          error.response.data.message
+            ? error.response.data.message
+            : 'Ha ocurrido un error'
+        )
+      }
       
+
       // if (error.response.errors) {
       //   errorsArray.push(error.response.errors);
       // } else {
