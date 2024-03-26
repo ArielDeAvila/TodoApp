@@ -26,6 +26,9 @@ router.beforeEach(async (to, from, next) => {
   if (!isAuthenticated && !publicRoutes.includes(to.name)) {
     next({ name: "login", replace: true })
   }
+  else if (isAuthenticated && to.name == 'login') {
+    next({name:'dashboard'})
+  }
   else next()
 });
 

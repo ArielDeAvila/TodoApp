@@ -9,11 +9,12 @@ const useAuthStore = defineStore({
   id: "auth",
   state: () =>
     ({
-      auth: null,
-    } as { auth: string | null }),
+      token: null,
+      userName: null
+    } as { token: string | null }),
   getters: {
     getToken(): any {
-      return this.auth;
+      return this.token;
     },
   },
   actions: {
@@ -37,19 +38,27 @@ const useAuthStore = defineStore({
       }
 
       try {
-        const data: BaseResponse = await makeRequest(request)
-        this.auth = data.data
+        const data: BaseResponse = await makeRequest(request);
+        this.token = data.data;
         return data
       } catch (error) {
         throw error
       }
     },
     setToken(token: string): void {
-      this.auth = token;
+      this.token = token;
+      console.log('aaahh!!');
+      
     },
-    cleanToken() {
-      this.auth = null;
-    },
+    async logOut() {
+      try {
+        localStorage.clear();
+        this.token = null;
+      } catch(error) {
+        throw error
+      }
+
+    }
   },
   persist: true,
 });

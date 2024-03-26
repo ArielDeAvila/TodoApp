@@ -4,6 +4,7 @@
       :elevation="0"
       class="nav-bar"
       v-model="open"
+      width="300"
     >
       <nav-bar/>
     </v-navigation-drawer>
@@ -16,7 +17,7 @@
       :order="order"
       style="background-color: transparent;"
     >
-      <app-bar @open="open=!open" :opened="open"/>
+      <app-bar v-model="open"/>
     </v-app-bar>    
 
     <v-main  class="app-main" style="min-height: 100dvh;">

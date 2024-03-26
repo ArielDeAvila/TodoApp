@@ -14,6 +14,7 @@ import router from "./router/Index";
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 import { optionsToast } from "./plugins/Toast";
+import "floating-vue/dist/style.css";
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);

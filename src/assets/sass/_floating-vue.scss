@@ -1,0 +1,15 @@
+.v-popper--theme-custom-dropdown .v-popper__inner {
+  background: #393955;
+  color: #ffffff;
+  padding: 7px;
+  border: none;
+  border-radius: 9px;
+}
+
+.v-popper--theme-custom-dropdown .v-popper__arrow-outer {
+  border-color: #393955;
+}
+
+.v-popper--theme-custom-dropdown .v-popper__arrow-inner {
+  visibility: hidden;
+}

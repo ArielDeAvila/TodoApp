@@ -1,15 +1,14 @@
 import axios from "axios";
 import { useErrorsStore } from "@/stores/errors";
 import router from "@/router/Index";
-import { BaseResponse } from '../types/TypeStore';
 import { useToast } from "vue-toastification";
 
 const toast = useToast()
 
-const bearer = localStorage.getItem("auth");
-if (bearer) {
-  const auth = JSON.parse(bearer);
-  axios.defaults.headers.common.Authorization = "Bearer " + auth.bearer;
+const auth = localStorage.getItem("auth");
+if (auth) {
+  const user = JSON.parse(auth);
+  axios.defaults.headers.common.Authorization = "Bearer " + user.token;
 }
 
 
